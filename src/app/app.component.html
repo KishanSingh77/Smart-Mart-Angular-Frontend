@@ -1,11 +1,25 @@
-<div style="text-align:center">
-  <header></header>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Smart-Mart</title>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <header></header>
+    </div>
 
-<router-outlet></router-outlet>
-<div
-  style=" position: fixed;
-bottom:0;width: 100% "
->
-  <footer></footer>
-</div>
+    <div style="overflow: scroll; min-height: calc(80vh );">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div
+      style=" position: relative;
+  margin-bottom: 0%"
+    >
+      <footer></footer>
+    </div>
+  </body>
+</html>
