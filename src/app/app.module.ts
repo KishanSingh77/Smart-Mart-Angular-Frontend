@@ -18,6 +18,7 @@ import { VendorLoginComponent } from "./vendor-login/vendor-login.component";
 import { CartService } from ".././Services/cartService";
 import { DecimalPipe } from "@angular/common";
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.co
     OrdersComponent,
     CartComponent,
     VendorLoginComponent,
-    VendorDashboardComponent
+    VendorDashboardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

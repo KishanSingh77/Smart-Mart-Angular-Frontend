@@ -1,9 +1,12 @@
 .my-navbar {
-  background-color: #004080;
+  background-color: #292c2f;
   border-color: #425766;
+  margin-left: -206px;
 }
 .my-navbar .navbar-brand {
   color: #fff;
+  font-size: 231%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .my-navbar .navbar-brand:hover,
 .my-navbar .navbar-brand:focus {
@@ -81,4 +84,18 @@
     color: #e5dbdb;
     background-color: #425766;
   }
+}
+
+.bodyStyle {
+  background-color: black;
+}
+.headStyle {
+  background-color: black;
+  background-color: inherit;
+  margin-left: 340px;
+  border: black;
+  /* height:50px; */
+}
+.formStyle {
+  margin-left: 102px;
 }
