@@ -14,11 +14,11 @@ export class LoginService {
   vendorLoginUrl = "http://localhost:3000/vendor/login";
   userLoginUrl = "http://localhost:3000/user/login";
 
-  //vendorLogin
+  // vendorLogin
   validateVendorLogin(cred: Credentials): Observable<any> {
     console.log("in validateVendorLogin");
-    let headers = new Headers({ "Content-Type": "application/json" });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ "Content-Type": "application/json" });
+    const options = new RequestOptions({ headers: headers });
     return this.http
       .post(this.vendorLoginUrl, cred, {
         headers: new HttpHeaders().set("Content-Type", "application/json")

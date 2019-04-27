@@ -4,7 +4,7 @@ import { ProductService } from "../../Services/product.service";
 import { Product } from "../../Models/Product";
 import { Router } from "@angular/router";
 import { CartService } from "../../Services/cartService";
-
+declare var FB;
 @Component({
   selector: "userDashboard",
   templateUrl: "./user-dashboard.component.html",

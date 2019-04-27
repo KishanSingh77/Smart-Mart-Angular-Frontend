@@ -6,6 +6,7 @@ import { parse } from "url";
 import { DecimalPipe } from "@angular/common";
 import { OrderService } from "src/Services/order.service";
 import { Router } from "@angular/router";
+import { SnsService } from "src/Services/sns.service";
 
 @Component({
   selector: "app-payments",
@@ -19,6 +20,7 @@ export class PaymentsComponent implements OnInit {
     private cartService: CartService,
     private decimalPipe: DecimalPipe,
     private orderService: OrderService,
+    private snsService: SnsService,
     private router: Router
   ) {}
 
@@ -50,6 +52,27 @@ export class PaymentsComponent implements OnInit {
     this.itemsInCart.forEach(product => {
       order.productId.push(product._id);
     });
+
+    //preparing itemNames
+    let itemNames: String = "";
+    this.itemsInCart.forEach(product => {
+      itemNames += product.name + ", ";
+    });
+    console.log("itemNames ");
+
+    console.log(itemNames);
+
+    //sends Email to vendors
+    console.log("about to send mail");
+
+    this.snsService.sendEmail(itemNames).subscribe(res => {
+      console.log("in send mail");
+
+      console.log(res);
+    });
+    console.log("mail sent");
+
+    //calls backend for creating orders
     this.orderService.createOrder(order).subscribe(res => {
       console.log(res);
       this.router.navigate(["orders"]);

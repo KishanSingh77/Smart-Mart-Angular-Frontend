@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, NgZone } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { LoginService } from "src/Services/login.service";
 import { Credentials } from "src/Models/Credentials";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
-
+declare var FB;
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -17,8 +17,11 @@ export class LoginComponent implements OnInit {
   authMsg: String;
   loginSuccess: boolean;
   rememberMe = ["No", "Yes"];
-  constructor(private loginService: LoginService, private router: Router) {}
 
+  //constructor contains Facebook sdk function necessary to power up the facebook login
+  constructor(private router: Router, private loginService: LoginService) {}
+
+  /***********************end of constructor */
   ngOnInit() {
     this.createFormGroup();
   }
@@ -40,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.loginService.validateUserLogin(credentials).subscribe(data => {
       console.log(data.message);
 
-      if (data.message != "Auth failed") {
+      if (data.message !== "Auth failed") {
         this.token = data.token;
         localStorage.setItem("authToken", this.token.toString());
         console.log(localStorage.getItem("authToken"));
@@ -58,8 +61,10 @@ export class LoginComponent implements OnInit {
     console.log("navigateToDashBoard");
 
     console.log(this.loginSuccess);
-    if (this.authMsg == "Auth successful") {
+    if (this.authMsg === "Auth successful") {
       this.router.navigate(["/userDashboard"]);
     }
   }
+
+  //Fb login components
 }

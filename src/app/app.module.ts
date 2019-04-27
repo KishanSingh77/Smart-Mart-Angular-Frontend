@@ -19,6 +19,7 @@ import { CartService } from ".././Services/cartService";
 import { DecimalPipe } from "@angular/common";
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
+import { FaceBookLoginComponent } from './face-book-login/face-book-login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     CartComponent,
     VendorLoginComponent,
     VendorDashboardComponent,
-    FooterComponent
+    FooterComponent,
+    FaceBookLoginComponent
   ],
   imports: [
     BrowserModule,
